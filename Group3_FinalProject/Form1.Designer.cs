@@ -28,12 +28,227 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCipherTxt = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtSCipheredTxt = new System.Windows.Forms.TextBox();
+            this.txtSClearTxt = new System.Windows.Forms.TextBox();
+            this.txtCompRatio = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnBrowse = new System.Windows.Forms.Button();
+            this.btnEncryt = new System.Windows.Forms.Button();
+            this.btnDecrypt = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.colHeadLetter = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colHeadASCII = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colHeadOccurence = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colHeadFrequency = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colHeadHuffman_Code = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtCompRatio);
+            this.groupBox1.Controls.Add(this.txtSClearTxt);
+            this.groupBox1.Controls.Add(this.txtSCipheredTxt);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblCipherTxt);
+            this.groupBox1.Location = new System.Drawing.Point(668, 140);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(241, 109);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Compression Ratio";
+            // 
+            // lblCipherTxt
+            // 
+            this.lblCipherTxt.AutoSize = true;
+            this.lblCipherTxt.Location = new System.Drawing.Point(7, 20);
+            this.lblCipherTxt.Name = "lblCipherTxt";
+            this.lblCipherTxt.Size = new System.Drawing.Size(96, 13);
+            this.lblCipherTxt.TabIndex = 0;
+            this.lblCipherTxt.Text = "Size Ciphered Text";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Size Clear Text";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 79);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Compression Ratio";
+            // 
+            // txtSCipheredTxt
+            // 
+            this.txtSCipheredTxt.Location = new System.Drawing.Point(109, 17);
+            this.txtSCipheredTxt.Name = "txtSCipheredTxt";
+            this.txtSCipheredTxt.Size = new System.Drawing.Size(100, 20);
+            this.txtSCipheredTxt.TabIndex = 3;
+            // 
+            // txtSClearTxt
+            // 
+            this.txtSClearTxt.Location = new System.Drawing.Point(109, 47);
+            this.txtSClearTxt.Name = "txtSClearTxt";
+            this.txtSClearTxt.Size = new System.Drawing.Size(100, 20);
+            this.txtSClearTxt.TabIndex = 4;
+            // 
+            // txtCompRatio
+            // 
+            this.txtCompRatio.Location = new System.Drawing.Point(109, 76);
+            this.txtCompRatio.Name = "txtCompRatio";
+            this.txtCompRatio.Size = new System.Drawing.Size(100, 20);
+            this.txtCompRatio.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(177, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Select the file you would like to run: ";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(196, 11);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(293, 20);
+            this.textBox1.TabIndex = 2;
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Location = new System.Drawing.Point(530, 9);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(75, 23);
+            this.btnBrowse.TabIndex = 3;
+            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            // 
+            // btnEncryt
+            // 
+            this.btnEncryt.Location = new System.Drawing.Point(626, 8);
+            this.btnEncryt.Name = "btnEncryt";
+            this.btnEncryt.Size = new System.Drawing.Size(75, 23);
+            this.btnEncryt.TabIndex = 4;
+            this.btnEncryt.Text = "Encrypt";
+            this.btnEncryt.UseVisualStyleBackColor = true;
+            // 
+            // btnDecrypt
+            // 
+            this.btnDecrypt.Location = new System.Drawing.Point(707, 8);
+            this.btnDecrypt.Name = "btnDecrypt";
+            this.btnDecrypt.Size = new System.Drawing.Size(75, 23);
+            this.btnDecrypt.TabIndex = 5;
+            this.btnDecrypt.Text = "Decrypt";
+            this.btnDecrypt.UseVisualStyleBackColor = true;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(788, 8);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 6;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colHeadLetter,
+            this.colHeadASCII,
+            this.colHeadOccurence,
+            this.colHeadFrequency,
+            this.colHeadHuffman_Code});
+            this.listView1.Location = new System.Drawing.Point(16, 70);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(515, 434);
+            this.listView1.TabIndex = 7;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // colHeadLetter
+            // 
+            this.colHeadLetter.Text = "Letter";
+            this.colHeadLetter.Width = 97;
+            // 
+            // colHeadASCII
+            // 
+            this.colHeadASCII.Text = "ASCII";
+            this.colHeadASCII.Width = 101;
+            // 
+            // colHeadOccurence
+            // 
+            this.colHeadOccurence.Text = "Occurence";
+            this.colHeadOccurence.Width = 101;
+            // 
+            // colHeadFrequency
+            // 
+            this.colHeadFrequency.Text = "Frequency";
+            this.colHeadFrequency.Width = 92;
+            // 
+            // colHeadHuffman_Code
+            // 
+            this.colHeadHuffman_Code.Text = "Huffman Code";
+            this.colHeadHuffman_Code.Width = 120;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(931, 516);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnDecrypt);
+            this.Controls.Add(this.btnEncryt);
+            this.Controls.Add(this.btnBrowse);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblCipherTxt;
+        private System.Windows.Forms.TextBox txtCompRatio;
+        private System.Windows.Forms.TextBox txtSClearTxt;
+        private System.Windows.Forms.TextBox txtSCipheredTxt;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.Button btnEncryt;
+        private System.Windows.Forms.Button btnDecrypt;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader colHeadLetter;
+        private System.Windows.Forms.ColumnHeader colHeadASCII;
+        private System.Windows.Forms.ColumnHeader colHeadOccurence;
+        private System.Windows.Forms.ColumnHeader colHeadFrequency;
+        private System.Windows.Forms.ColumnHeader colHeadHuffman_Code;
     }
 }
 
