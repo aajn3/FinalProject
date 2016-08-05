@@ -1,0 +1,2 @@
+*.exe
+Group3_FinalProject\obj
