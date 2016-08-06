@@ -1,24 +1,30 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Group3_FinalProject
 {
     public class TextHandler
     {
-        Dictionary<char, int> Occurences; //
-        Dictionary<string, string> Frequency;
-        Dictionary<string, string> Ordered_Frequency;
-        
+
+        private int totalChar;
+
+
+        public Dictionary<char,int> Occurences { get; set; }
+        public Dictionary<char, double> Frequency { get; set; }
+        public Dictionary<char, double> Ordered_Frequency { get; set; }
 
         public TextHandler()
         {
             Occurences = new Dictionary<char, int>();
-            Frequency = new Dictionary<string, string>();
-            Ordered_Frequency = new Dictionary<string, string>();
+            Frequency = new Dictionary<char, double>();
+            Ordered_Frequency = new Dictionary<char, double>();
+            totalChar = 0;
 
             // add keys to occurences
             string keys = "abcdefghijklmnopqrstuvwxyz";
@@ -30,37 +36,52 @@ namespace Group3_FinalProject
         }
 
         public void CountOccorences(string path){
-            if (File.Exists(path))
-            {
-                Console.WriteLine("I'm here");
-            }
+
             using(StreamReader reader = new StreamReader(path)){
-                string line;//line of file
                 char index;
-                int value;
 
-                while ((line = reader.ReadLine()) != null)
+                while (reader.Peek()>=0)
                 {
-                    // read each char
-                    foreach (char c in line)
-                    {
-                        index = Char.ToLower(c);
 
-                        if ("abcdefghijklmnopqrstuvwxyz".Contains(index))
-                        {
-                            value=(Occurences[index])+1;
-                            Occurences[index] = value;
-                        }
-                        else
-                        {
-                            value = (Occurences[' ']) + 1;
-                            Occurences[' '] = value;
-                        }
+                    // Count total char
+                    totalChar++;
+
+                    index = Char.ToLower((char)reader.Read());
+
+                    if ("abcdefghijklmnopqrstuvwxyz".Contains(index))
+                    {
+                        Occurences[index] = (Occurences[index]) + 1; ;
                     }
+                    else
+                    {
+                        Occurences[' '] = (Occurences[' ']) + 1;
+                    }
+
                 }
             }
 
         }//CountOccorences
+
+        public void PopulateFrequency()
+        {
+
+            foreach (char key in Occurences.Keys)
+            {
+                Frequency.Add(key, ((double)Occurences[key] / (double)totalChar));
+            }
+
+          
+        }//PopulateFrequency
+
+
+        public void PopulateOrderedFrequency()
+        {
+            foreach (var item in Frequency.OrderByDescending(key => key.Value))
+            {
+                Ordered_Frequency.Add(item.Key, item.Value);
+            }
+
+        }
     }
 
 }
