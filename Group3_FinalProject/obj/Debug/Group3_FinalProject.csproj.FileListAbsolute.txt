@@ -1,10 +1,9 @@
 C:\Users\aaron\Documents\Visual Studio 2013\Projects\final\FinalProject\Group3_FinalProject\bin\Debug\Group3_FinalProject.exe.config
-C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Final Project\FinalProject\Group3_FinalProject\bin\Debug\Group3_FinalProject.exe.config
-C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Final Project\FinalProject\Group3_FinalProject\bin\Debug\Group3_FinalProject.exe
-C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Final Project\FinalProject\Group3_FinalProject\bin\Debug\Group3_FinalProject.pdb
-C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Final Project\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.csprojResolveAssemblyReference.cache
-C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Final Project\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.Form1.resources
-C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Final Project\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.Properties.Resources.resources
-C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Final Project\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.csproj.GenerateResource.Cache
-C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Final Project\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.exe
-C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Final Project\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.pdb
+C:\Users\aaron\Documents\Visual Studio 2013\Projects\final\FinalProject\Group3_FinalProject\bin\Debug\Group3_FinalProject.exe
+C:\Users\aaron\Documents\Visual Studio 2013\Projects\final\FinalProject\Group3_FinalProject\bin\Debug\Group3_FinalProject.pdb
+C:\Users\aaron\Documents\Visual Studio 2013\Projects\final\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.Form1.resources
+C:\Users\aaron\Documents\Visual Studio 2013\Projects\final\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.Properties.Resources.resources
+C:\Users\aaron\Documents\Visual Studio 2013\Projects\final\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.csproj.GenerateResource.Cache
+C:\Users\aaron\Documents\Visual Studio 2013\Projects\final\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.exe
+C:\Users\aaron\Documents\Visual Studio 2013\Projects\final\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.pdb
+C:\Users\aaron\Documents\Visual Studio 2013\Projects\final\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.csprojResolveAssemblyReference.cache
