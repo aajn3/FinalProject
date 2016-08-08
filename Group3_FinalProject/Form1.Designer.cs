@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblCipherTxt = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtSCipheredTxt = new System.Windows.Forms.TextBox();
-            this.txtSClearTxt = new System.Windows.Forms.TextBox();
             this.txtCompRatio = new System.Windows.Forms.TextBox();
+            this.txtSClearTxt = new System.Windows.Forms.TextBox();
+            this.txtSCipheredTxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblCipherTxt = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.btnEncryt = new System.Windows.Forms.Button();
             this.btnDecrypt = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lstViewDictionaries = new System.Windows.Forms.ListView();
             this.colHeadLetter = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colHeadASCII = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colHeadOccurence = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -58,30 +58,33 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.lblCipherTxt);
-            this.groupBox1.Location = new System.Drawing.Point(668, 140);
+            this.groupBox1.Location = new System.Drawing.Point(622, 96);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(241, 109);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Compression Ratio";
             // 
-            // lblCipherTxt
+            // txtCompRatio
             // 
-            this.lblCipherTxt.AutoSize = true;
-            this.lblCipherTxt.Location = new System.Drawing.Point(7, 20);
-            this.lblCipherTxt.Name = "lblCipherTxt";
-            this.lblCipherTxt.Size = new System.Drawing.Size(96, 13);
-            this.lblCipherTxt.TabIndex = 0;
-            this.lblCipherTxt.Text = "Size Ciphered Text";
+            this.txtCompRatio.Location = new System.Drawing.Point(109, 76);
+            this.txtCompRatio.Name = "txtCompRatio";
+            this.txtCompRatio.Size = new System.Drawing.Size(100, 20);
+            this.txtCompRatio.TabIndex = 5;
             // 
-            // label2
+            // txtSClearTxt
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Size Clear Text";
+            this.txtSClearTxt.Location = new System.Drawing.Point(109, 47);
+            this.txtSClearTxt.Name = "txtSClearTxt";
+            this.txtSClearTxt.Size = new System.Drawing.Size(100, 20);
+            this.txtSClearTxt.TabIndex = 4;
+            // 
+            // txtSCipheredTxt
+            // 
+            this.txtSCipheredTxt.Location = new System.Drawing.Point(109, 17);
+            this.txtSCipheredTxt.Name = "txtSCipheredTxt";
+            this.txtSCipheredTxt.Size = new System.Drawing.Size(100, 20);
+            this.txtSCipheredTxt.TabIndex = 3;
             // 
             // label3
             // 
@@ -92,26 +95,23 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Compression Ratio";
             // 
-            // txtSCipheredTxt
+            // label2
             // 
-            this.txtSCipheredTxt.Location = new System.Drawing.Point(109, 17);
-            this.txtSCipheredTxt.Name = "txtSCipheredTxt";
-            this.txtSCipheredTxt.Size = new System.Drawing.Size(100, 20);
-            this.txtSCipheredTxt.TabIndex = 3;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Size Clear Text";
             // 
-            // txtSClearTxt
+            // lblCipherTxt
             // 
-            this.txtSClearTxt.Location = new System.Drawing.Point(109, 47);
-            this.txtSClearTxt.Name = "txtSClearTxt";
-            this.txtSClearTxt.Size = new System.Drawing.Size(100, 20);
-            this.txtSClearTxt.TabIndex = 4;
-            // 
-            // txtCompRatio
-            // 
-            this.txtCompRatio.Location = new System.Drawing.Point(109, 76);
-            this.txtCompRatio.Name = "txtCompRatio";
-            this.txtCompRatio.Size = new System.Drawing.Size(100, 20);
-            this.txtCompRatio.TabIndex = 5;
+            this.lblCipherTxt.AutoSize = true;
+            this.lblCipherTxt.Location = new System.Drawing.Point(7, 20);
+            this.lblCipherTxt.Name = "lblCipherTxt";
+            this.lblCipherTxt.Size = new System.Drawing.Size(96, 13);
+            this.lblCipherTxt.TabIndex = 0;
+            this.lblCipherTxt.Text = "Size Ciphered Text";
             // 
             // label1
             // 
@@ -166,20 +166,20 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // listView1
+            // lstViewDictionaries
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstViewDictionaries.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colHeadLetter,
             this.colHeadASCII,
             this.colHeadOccurence,
             this.colHeadFrequency,
             this.colHeadHuffman_Code});
-            this.listView1.Location = new System.Drawing.Point(16, 70);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(515, 434);
-            this.listView1.TabIndex = 7;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lstViewDictionaries.Location = new System.Drawing.Point(16, 38);
+            this.lstViewDictionaries.Name = "lstViewDictionaries";
+            this.lstViewDictionaries.Size = new System.Drawing.Size(515, 509);
+            this.lstViewDictionaries.TabIndex = 7;
+            this.lstViewDictionaries.UseCompatibleStateImageBehavior = false;
+            this.lstViewDictionaries.View = System.Windows.Forms.View.Details;
             // 
             // colHeadLetter
             // 
@@ -210,8 +210,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 516);
-            this.Controls.Add(this.listView1);
+            this.ClientSize = new System.Drawing.Size(874, 559);
+            this.Controls.Add(this.lstViewDictionaries);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnDecrypt);
             this.Controls.Add(this.btnEncryt);
@@ -221,6 +221,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -243,7 +244,7 @@
         private System.Windows.Forms.Button btnEncryt;
         private System.Windows.Forms.Button btnDecrypt;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lstViewDictionaries;
         private System.Windows.Forms.ColumnHeader colHeadLetter;
         private System.Windows.Forms.ColumnHeader colHeadASCII;
         private System.Windows.Forms.ColumnHeader colHeadOccurence;
