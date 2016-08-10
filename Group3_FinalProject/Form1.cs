@@ -1,21 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
 
 
 namespace Group3_FinalProject
 {
     public partial class Form1 : Form
     {
+        //PRIVATE VARIABLES********************************************************************************
         Dictionary<char, byte[]> ASCII;
+        TextHandler textHandler;
         string dictKeys = " abcdefghijklmnopqrstuvwxyz";
-        
+        private OpenFileDialog openFileDialog1;
+        private string filePath;
+
         public Form1()
         {
             InitializeComponent();
@@ -38,6 +39,12 @@ namespace Group3_FinalProject
                 lstViewDictionaries.Items.Add(new ListViewItem(new string[] { key.ToString(), disVal }));
             }
 
+            textHandler = new TextHandler();
+           openFileDialog1 = new OpenFileDialog();
+           
+            
+
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -48,6 +55,38 @@ namespace Group3_FinalProject
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            
+            // opens the dialog and if user click ok then
+            if (openFileDialog1.ShowDialog() == DialogResult.OK) // Test result.
+            {
+                filePath = openFileDialog1.FileName;
+
+                textHandler.CountOccorences(filePath);
+
+                textHandler.PopulateFrequency();
+                textHandler.PopulateOrderedFrequency();
+
+
+                ArrayList occurencesColumn = new ArrayList();
+
+                int listViewIndex=0;
+                foreach (char item in textHandler.Occurences.Keys)
+                {
+                    lstViewDictionaries.Items[listViewIndex].SubItems.Add(textHandler.Occurences[item].ToString());
+
+                    lstViewDictionaries.Items[listViewIndex].SubItems.Add(textHandler.Frequency[item].ToString("P"));
+                    listViewIndex++;
+
+
+                }
+
+               
+
+            }
         }
     }
 }
