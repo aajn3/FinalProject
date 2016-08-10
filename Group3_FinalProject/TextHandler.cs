@@ -28,11 +28,12 @@ namespace Group3_FinalProject
 
             // add keys to occurences
             string keys = "abcdefghijklmnopqrstuvwxyz";
-            
-            foreach(char key in keys){
+
+            Occurences.Add(' ', 0);
+            foreach (char key in keys){
                 Occurences.Add(key,0);
             }
-            Occurences.Add(' ', 0);
+            
         }
 
         public void CountOccorences(string path){

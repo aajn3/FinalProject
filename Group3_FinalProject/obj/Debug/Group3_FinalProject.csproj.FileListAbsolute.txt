@@ -16,3 +16,12 @@ C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Final Project\Fi
 C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Final Project\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.Form1.resources
 C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Final Project\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.Properties.Resources.resources
 C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Final Project\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.csproj.GenerateResource.Cache
+C:\Users\User1\Desktop\FinalProject\Group3_FinalProject\bin\Debug\Group3_FinalProject.exe.config
+C:\Users\User1\Desktop\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.exe
+C:\Users\User1\Desktop\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.pdb
+C:\Users\User1\Desktop\FinalProject\Group3_FinalProject\bin\Debug\Group3_FinalProject.exe
+C:\Users\User1\Desktop\FinalProject\Group3_FinalProject\bin\Debug\Group3_FinalProject.pdb
+C:\Users\User1\Desktop\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.csprojResolveAssemblyReference.cache
+C:\Users\User1\Desktop\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.Form1.resources
+C:\Users\User1\Desktop\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.Properties.Resources.resources
+C:\Users\User1\Desktop\FinalProject\Group3_FinalProject\obj\Debug\Group3_FinalProject.csproj.GenerateResource.Cache
