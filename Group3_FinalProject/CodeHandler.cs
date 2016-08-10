@@ -9,8 +9,11 @@ namespace Group3_FinalProject
     // CODE HANDLER CLASS
     class CodeHandler
     {
-        Dictionary<char, string> huffmanCode = new Dictionary<char, string>();
-        string[] encoding = { "100", "0010", "0011", "1111", "1110", "1100", "1011", "1010", "0110", "0101", "11011", "01111", "01001", "01000", "00011", "00010", "00001", "00000", "110101", "011101", "011100", "1101001", "110100011", "110100001", "110100000", "1101000101", "11010001000" };
+        // PRIVATE INSTANCE VARIABLES
+        private Dictionary<char, string> huffmanCode = new Dictionary<char, string>();
+        private string[] encoding = { "100", "0010", "0011", "1111", "1110", "1100", "1011", "1010", "0110", "0101", "11011", "01111", "01001", "01000", "00011", "00010", "00001", "00000", "110101", "011101", "011100", "1101001", "110100011", "110100001", "110100000", "1101000101", "11010001000" };
+        private string encodedFilePath = Environment.SpecialFolder.Desktop.ToString() + @"\Huffman_ciphered.txt"; // points to a file on the current desktop
+        private string decodedFilePath = Environment.SpecialFolder.Desktop.ToString() + @"\Huffman_decoded.txt"; // points to a file on the current desktop
         
         // CONSTRUCTOR
         CodeHandler(Dictionary<char, double> orderedFrequency)
@@ -28,7 +31,7 @@ namespace Group3_FinalProject
         {
             // open streams to original/new file paths
             using (StreamReader reader = new StreamReader(path))
-            using (StreamWriter writer = new StreamWriter(Environment.SpecialFolder.Desktop.ToString() + @"\encoded.txt")) // pushes a new file to the desktop
+            using (StreamWriter writer = new StreamWriter(encodedFilePath))
             {
                 char index;
                 while (reader.Peek()>=0)
@@ -45,11 +48,20 @@ namespace Group3_FinalProject
                     }                    
                 }
             }
+            // open and display the resulting .txt <-- TODO: make this happen in either the codehandler or form
         }
 
-        public void Decrypt()
+        public void Decrypt(string path)
         {
+            StringBuilder currentCharSet;
+            // open streams to original/new file paths
+            using (StreamReader reader = new StreamReader(encodedFilePath))
+            using (StreamWriter writer = new StreamWriter(decodedFilePath))
+            {
+                // read and convert the ciphered file
 
+                // display the decoded file
+            }
         }
 
         double CalcCompressionRatio(int sizeOfCipherText, int sizeOfClearText)
