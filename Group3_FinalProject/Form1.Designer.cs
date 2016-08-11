@@ -67,22 +67,28 @@
             // 
             // txtCompRatio
             // 
+            this.txtCompRatio.BackColor = System.Drawing.SystemColors.Window;
             this.txtCompRatio.Location = new System.Drawing.Point(109, 76);
             this.txtCompRatio.Name = "txtCompRatio";
+            this.txtCompRatio.ReadOnly = true;
             this.txtCompRatio.Size = new System.Drawing.Size(100, 20);
             this.txtCompRatio.TabIndex = 5;
             // 
             // txtSClearTxt
             // 
+            this.txtSClearTxt.BackColor = System.Drawing.SystemColors.Window;
             this.txtSClearTxt.Location = new System.Drawing.Point(109, 47);
             this.txtSClearTxt.Name = "txtSClearTxt";
+            this.txtSClearTxt.ReadOnly = true;
             this.txtSClearTxt.Size = new System.Drawing.Size(100, 20);
             this.txtSClearTxt.TabIndex = 4;
             // 
             // txtSCipheredTxt
             // 
+            this.txtSCipheredTxt.BackColor = System.Drawing.SystemColors.Window;
             this.txtSCipheredTxt.Location = new System.Drawing.Point(109, 17);
             this.txtSCipheredTxt.Name = "txtSCipheredTxt";
+            this.txtSCipheredTxt.ReadOnly = true;
             this.txtSCipheredTxt.Size = new System.Drawing.Size(100, 20);
             this.txtSCipheredTxt.TabIndex = 3;
             // 
@@ -137,6 +143,7 @@
             this.btnBrowse.TabIndex = 3;
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // btnEncryt
             // 
@@ -176,7 +183,7 @@
             this.colHeadHuffman_Code});
             this.lstViewDictionaries.Location = new System.Drawing.Point(16, 38);
             this.lstViewDictionaries.Name = "lstViewDictionaries";
-            this.lstViewDictionaries.Size = new System.Drawing.Size(515, 509);
+            this.lstViewDictionaries.Size = new System.Drawing.Size(559, 509);
             this.lstViewDictionaries.TabIndex = 7;
             this.lstViewDictionaries.UseCompatibleStateImageBehavior = false;
             this.lstViewDictionaries.View = System.Windows.Forms.View.Details;
@@ -219,6 +226,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

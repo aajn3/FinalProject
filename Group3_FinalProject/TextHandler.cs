@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Group3_FinalProject
 {
@@ -30,11 +25,12 @@ namespace Group3_FinalProject
 
             // add keys to occurences
             string keys = "abcdefghijklmnopqrstuvwxyz";
-            
-            foreach(char key in keys){
+
+            Occurences.Add(' ', 0);
+            foreach (char key in keys){
                 Occurences.Add(key,0);
             }
-            Occurences.Add(' ', 0);
+            
         }
 
         public void CountOccorences(string path){
@@ -48,7 +44,7 @@ namespace Group3_FinalProject
                     // Count total char
                     totalChar++;
 
-                    index = Char.ToLower((char)reader.Read());
+                    index = char.ToLower((char)reader.Read());
 
                     if ("abcdefghijklmnopqrstuvwxyz".Contains(index))
                     {
