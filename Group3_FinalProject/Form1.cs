@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 
 namespace Group3_FinalProject
@@ -83,6 +84,7 @@ namespace Group3_FinalProject
             //
             codeHandler = new CodeHandler(textHandler.Ordered_Frequency);
             codeHandler.Encrypt(filePath);
+            Process.Start("notepad.exe", codeHandler.EncodedFilePath);
             // populate the hufman code
             foreach (KeyValuePair<char, string> item in codeHandler.HuffmanCode)
             {

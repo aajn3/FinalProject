@@ -16,7 +16,9 @@ namespace Group3_FinalProject
         private string decodedFilePath = Directory.GetCurrentDirectory() + @"\Huffman_decoded.txt"; // points to a file on the current desktop
 
         public Dictionary<char, string> HuffmanCode { get { return huffmanCode; } }
-        
+        public string EncodedFilePath { get { return encodedFilePath; } }
+
+
         // CONSTRUCTOR
         public CodeHandler(Dictionary<char, double> orderedFrequency)
         {
@@ -26,6 +28,7 @@ namespace Group3_FinalProject
             {
                 huffmanCode.Add(key, encoding[indexer++]);
             }
+    
         }
 
         // METHODS
@@ -55,14 +58,20 @@ namespace Group3_FinalProject
 
         public void Decrypt(string path)
         {
-            StringBuilder currentCharSet;
+            bool readThreeChars=true;//TEMP
+
+            StringBuilder currentCharSet=new StringBuilder();
             // open streams to original/new file paths
             using (StreamReader reader = new StreamReader(encodedFilePath))
             using (StreamWriter writer = new StreamWriter(decodedFilePath))
             {
                 // read and convert the ciphered file
+                while(reader.Peek()>=0){
+                    currentCharSet.Append((char)reader.Read());
 
-
+                    char myKey = huffmanCode.FirstOrDefault(x => x.Value == currentCharSet.ToString()).Key;
+                    char m = myKey;
+                }
                 // display the decoded file
             }
         }
