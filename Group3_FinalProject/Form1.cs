@@ -84,7 +84,7 @@ namespace Group3_FinalProject
             //
             codeHandler = new CodeHandler(textHandler.Ordered_Frequency);
             codeHandler.Encrypt(filePath);
-            Process.Start(codeHandler.EncodedFilePath);
+            Process.Start("notepad.exe",codeHandler.EncodedFilePath);
             // populate the hufman code
             foreach (KeyValuePair<char, string> item in codeHandler.HuffmanCode)
             {
@@ -97,7 +97,7 @@ namespace Group3_FinalProject
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
             codeHandler.Decrypt(filePath);
-            Process.Start(codeHandler.DecodedFilePath);
+            Process.Start("notepad.exe",codeHandler.DecodedFilePath);
         }
 
     }
