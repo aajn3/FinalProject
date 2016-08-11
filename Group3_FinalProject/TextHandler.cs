@@ -9,7 +9,7 @@ namespace Group3_FinalProject
 
         private int totalChar;
 
-        public int TotalChar { get; }
+        public int TotalChar { get; set; }
 
 
         public Dictionary<char,int> Occurences { get; set; }

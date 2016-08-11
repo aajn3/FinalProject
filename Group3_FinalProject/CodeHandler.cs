@@ -1,8 +1,8 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Group3_FinalProject
 {
@@ -12,11 +12,13 @@ namespace Group3_FinalProject
         // PRIVATE INSTANCE VARIABLES
         private Dictionary<char, string> huffmanCode = new Dictionary<char, string>();
         private string[] encoding = { "100", "0010", "0011", "1111", "1110", "1100", "1011", "1010", "0110", "0101", "11011", "01111", "01001", "01000", "00011", "00010", "00001", "00000", "110101", "011101", "011100", "1101001", "110100011", "110100001", "110100000", "1101000101", "11010001000" };
-        private string encodedFilePath = Environment.SpecialFolder.Desktop.ToString() + @"\Huffman_ciphered.txt"; // points to a file on the current desktop
-        private string decodedFilePath = Environment.SpecialFolder.Desktop.ToString() + @"\Huffman_decoded.txt"; // points to a file on the current desktop
+        private string encodedFilePath = Directory.GetCurrentDirectory() + @"\Huffman_ciphered.txt"; // points to a file on the current desktop
+        private string decodedFilePath = Directory.GetCurrentDirectory() + @"\Huffman_decoded.txt"; // points to a file on the current desktop
+
+        public Dictionary<char, string> HuffmanCode { get { return huffmanCode; } }
         
         // CONSTRUCTOR
-        CodeHandler(Dictionary<char, double> orderedFrequency)
+        public CodeHandler(Dictionary<char, double> orderedFrequency)
         {
             int indexer = 0;
             // populate huffmanCode
@@ -36,9 +38,9 @@ namespace Group3_FinalProject
                 char index;
                 while (reader.Peek()>=0)
                 {
-                    index = Char.ToLower((char)reader.Read());
+                    index = char.ToLower((char)reader.Read());
 
-                    if ("abcdefghijklmnopqrstuvwxyz".Contains(index.ToString()))
+                    if ("abcdefghijklmnopqrstuvwxyz".Contains(index))
                     {
                         writer.Write(huffmanCode[index]);
                     }

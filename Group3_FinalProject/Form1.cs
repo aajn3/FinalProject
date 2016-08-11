@@ -11,6 +11,7 @@ namespace Group3_FinalProject
         //PRIVATE VARIABLES********************************************************************************
         Dictionary<char, byte[]> ASCII;
         TextHandler textHandler;
+        CodeHandler codeHandler;
         string dictKeys = " abcdefghijklmnopqrstuvwxyz";
         private OpenFileDialog openFileDialog1;
         private string filePath;
@@ -73,9 +74,22 @@ namespace Group3_FinalProject
                     listViewIndex++;
                 }
 
-               
-
             }
+        }
+
+        private void btnEncryt_Click(object sender, EventArgs e)
+        {
+            int listViewIndex = 0;
+            //
+            codeHandler = new CodeHandler(textHandler.Ordered_Frequency);
+            codeHandler.Encrypt(filePath);
+            // populate the hufman code
+            foreach (KeyValuePair<char, string> item in codeHandler.HuffmanCode)
+            {
+                lstViewDictionaries.Items[listViewIndex].SubItems.Add(item.Value);
+                listViewIndex++;
+            }
+
         }
     }
 }
