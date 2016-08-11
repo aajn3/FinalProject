@@ -14,6 +14,8 @@ namespace Group3_FinalProject
 
         private int totalChar;
 
+        public int TotalChar { get; }
+
 
         public Dictionary<char,int> Occurences { get; set; }
         public Dictionary<char, double> Frequency { get; set; }
