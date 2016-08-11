@@ -17,6 +17,7 @@ namespace Group3_FinalProject
 
         public Dictionary<char, string> HuffmanCode { get { return huffmanCode; } }
         public string EncodedFilePath { get { return encodedFilePath; } }
+        public string DecodedFilePath { get { return decodedFilePath; } }
 
 
         // CONSTRUCTOR
@@ -58,7 +59,7 @@ namespace Group3_FinalProject
 
         public void Decrypt(string path)
         {
-            bool readThreeChars=true;//TEMP
+            //bool readThreeChars=true;//TEMP
 
             StringBuilder currentCharSet=new StringBuilder();
             // open streams to original/new file paths
@@ -70,7 +71,14 @@ namespace Group3_FinalProject
                     currentCharSet.Append((char)reader.Read());
 
                     char myKey = huffmanCode.FirstOrDefault(x => x.Value == currentCharSet.ToString()).Key;
-                    char m = myKey;
+
+                    if (myKey!=0)
+                    {
+                        //System.Console.WriteLine(myKey);
+                        writer.Write((char)myKey);
+                        currentCharSet.Clear();
+                    }
+
                 }
                 // display the decoded file
             }

@@ -93,5 +93,10 @@ namespace Group3_FinalProject
             }
 
         }
+
+        private void btnDecrypt_Click(object sender, EventArgs e)
+        {
+            codeHandler.Decrypt(filePath);
+        }
     }
 }
