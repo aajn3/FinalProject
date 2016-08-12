@@ -35,9 +35,10 @@ namespace Group3_FinalProject
         private void btnBrowse_Click(object sender, EventArgs e)
         {
             ASCII = new Dictionary<char, byte[]>();
+            int listViewIndex = 0;
             //filling ASCII dictionary and displaying dictionary in listview
             foreach (char key in dictKeys)
-            {                
+            {
                 byte[] value = Encoding.ASCII.GetBytes(key.ToString());
                 ASCII.Add(key, value);
 
@@ -48,65 +49,64 @@ namespace Group3_FinalProject
                 {
                     disVal += val.ToString();
                 }
+                //displaying the ASCII dictionary
+                //making the space character the word space so more human readable
                 if (key == ' ')
                 {
-                    lstViewDictionaries.Items.Add(new ListViewItem(new string[] { "space", disVal }));
+                    lstViewDictionaries.Items.Add("space");
+                    lstViewDictionaries.Items[listViewIndex].SubItems.Add(disVal);
                 }
                 else
                 {
-                    lstViewDictionaries.Items.Add(new ListViewItem(new string[] { key.ToString(), disVal }));
+                    lstViewDictionaries.Items.Add(key.ToString());
+                    lstViewDictionaries.Items[listViewIndex].SubItems.Add(disVal);         
                 }
+                listViewIndex++;
             }
-            // opens the dialog and if user click ok then
-            if (openFileDialog.ShowDialog() == DialogResult.OK) // Test result.
-            {
-                //location of the iorn heel file 
-                filePath = openFileDialog.FileName;
-                txtPathName.Text = filePath;
-                // sends the file path to textHandler 
-                textHandler.CountOccorences(filePath);
-                // textHandler will count and sort the file
-                textHandler.PopulateFrequency();
-                textHandler.PopulateOrderedFrequency();
+                // opens the dialog and if user click ok then
+                if (openFileDialog.ShowDialog() == DialogResult.OK) // Test result.
+                {
+                    //location of the iorn heel file 
+                    filePath = openFileDialog.FileName;
+                    txtPathName.Text = filePath;
+                    // sends the file path to textHandler 
+                    textHandler.CountOccorences(filePath);
+                    // textHandler will count and sort the file
+                    textHandler.PopulateFrequency();
+                    textHandler.PopulateOrderedFrequency();
 
-                /*
-                 * Fills Rest of List View ( occur, freq + huff) 
-                 */
-                int listViewIndex=0;
-                codeHandler = new CodeHandler(textHandler.Ordered_Frequency);
-                foreach (char item in textHandler.Occurences.Keys){
-                    lstViewDictionaries.Items[listViewIndex].SubItems.Add(textHandler.Occurences[item].ToString());
-                    lstViewDictionaries.Items[listViewIndex].SubItems.Add(textHandler.Frequency[item].ToString("P"));
-                    lstViewDictionaries.Items[listViewIndex].SubItems.Add(codeHandler.HuffmanCode[item]);
-                    listViewIndex++;
+                    /*
+                     * Fills Rest of List View ( occur, freq + huff) 
+                     */
+                    listViewIndex = 0;
+                    codeHandler = new CodeHandler(textHandler.Ordered_Frequency);
+                    foreach (char item in textHandler.Occurences.Keys)
+                    {
+                        lstViewDictionaries.Items[listViewIndex].SubItems.Add(textHandler.Occurences[item].ToString());
+                        lstViewDictionaries.Items[listViewIndex].SubItems.Add(textHandler.Frequency[item].ToString("P"));
+                        lstViewDictionaries.Items[listViewIndex].SubItems.Add(codeHandler.HuffmanCode[item]);
+                        listViewIndex++;
+                        
+                    }
+
+
+
                 }
-                
-
-
-            }
+            
         }
 
         private void btnEncryt_Click(object sender, EventArgs e)
         {
-            //int listViewIndex = 0;
-            //
             codeHandler = new CodeHandler(textHandler.Ordered_Frequency);
             codeHandler.Encrypt(filePath);
             Process.Start("wordpad.exe", "\"" + codeHandler.EncodedFilePath + "\"");
-            // populate the hufman code
-
-
+ 
         }
 
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
             codeHandler.Decrypt(filePath);
             Process.Start("wordpad.exe", "\"" + codeHandler.DecodedFilePath + "\"");
-        }
-
-        private void lstViewDictionaries_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
     }

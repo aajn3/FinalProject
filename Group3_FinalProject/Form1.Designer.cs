@@ -189,7 +189,6 @@
             this.lstViewDictionaries.TabIndex = 7;
             this.lstViewDictionaries.UseCompatibleStateImageBehavior = false;
             this.lstViewDictionaries.View = System.Windows.Forms.View.Details;
-            this.lstViewDictionaries.SelectedIndexChanged += new System.EventHandler(this.lstViewDictionaries_SelectedIndexChanged);
             // 
             // colHeadLetter
             // 
