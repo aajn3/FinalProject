@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 
 namespace Group3_FinalProject
@@ -11,8 +12,9 @@ namespace Group3_FinalProject
         //PRIVATE VARIABLES********************************************************************************
         Dictionary<char, byte[]> ASCII;
         TextHandler textHandler;
+        CodeHandler codeHandler;
         string dictKeys = " abcdefghijklmnopqrstuvwxyz";
-        private OpenFileDialog openFileDialog1;
+        private OpenFileDialog openFileDialog;
         private string filePath;
 
         public Form1()
@@ -20,13 +22,10 @@ namespace Group3_FinalProject
             InitializeComponent();
 
             textHandler = new TextHandler();
-            openFileDialog1 = new OpenFileDialog();
+            openFileDialog = new OpenFileDialog();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        private void btnExit_Click(object sender, EventArgs e){this.Close();}
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -53,10 +52,11 @@ namespace Group3_FinalProject
         {
             
             // opens the dialog and if user click ok then
-            if (openFileDialog1.ShowDialog() == DialogResult.OK) // Test result.
+            if (openFileDialog.ShowDialog() == DialogResult.OK) // Test result.
             {
                 //location of the iorn heal file 
-                filePath = openFileDialog1.FileName;
+                filePath = openFileDialog.FileName;
+                txtPathName.Text = filePath;
                 // sends the file path to textHandler 
                 textHandler.CountOccorences(filePath);
                 // textHandler will count and sort the file
@@ -73,9 +73,30 @@ namespace Group3_FinalProject
                     listViewIndex++;
                 }
 
-               
-
             }
         }
+
+        private void btnEncryt_Click(object sender, EventArgs e)
+        {
+            int listViewIndex = 0;
+            //
+            codeHandler = new CodeHandler(textHandler.Ordered_Frequency);
+            codeHandler.Encrypt(filePath);
+            Process.Start("wordpad.exe", "\"" + codeHandler.EncodedFilePath + "\"");
+            // populate the hufman code
+            foreach (KeyValuePair<char, string> item in codeHandler.HuffmanCode)
+            {
+                lstViewDictionaries.Items[listViewIndex].SubItems.Add(item.Value);
+                listViewIndex++;
+            }
+
+        }
+
+        private void btnDecrypt_Click(object sender, EventArgs e)
+        {
+            codeHandler.Decrypt(filePath);
+            Process.Start("wordpad.exe", "\"" + codeHandler.DecodedFilePath + "\"");
+        }
+
     }
 }

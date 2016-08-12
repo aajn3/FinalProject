@@ -36,7 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblCipherTxt = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPathName = new System.Windows.Forms.TextBox();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.btnEncryt = new System.Windows.Forms.Button();
             this.btnDecrypt = new System.Windows.Forms.Button();
@@ -128,12 +128,12 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Select the file you would like to run: ";
             // 
-            // textBox1
+            // txtPathName
             // 
-            this.textBox1.Location = new System.Drawing.Point(196, 11);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(293, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtPathName.Location = new System.Drawing.Point(196, 11);
+            this.txtPathName.Name = "txtPathName";
+            this.txtPathName.Size = new System.Drawing.Size(293, 20);
+            this.txtPathName.TabIndex = 2;
             // 
             // btnBrowse
             // 
@@ -153,6 +153,7 @@
             this.btnEncryt.TabIndex = 4;
             this.btnEncryt.Text = "Encrypt";
             this.btnEncryt.UseVisualStyleBackColor = true;
+            this.btnEncryt.Click += new System.EventHandler(this.btnEncryt_Click);
             // 
             // btnDecrypt
             // 
@@ -162,6 +163,7 @@
             this.btnDecrypt.TabIndex = 5;
             this.btnDecrypt.Text = "Decrypt";
             this.btnDecrypt.UseVisualStyleBackColor = true;
+            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
             // 
             // btnExit
             // 
@@ -223,7 +225,7 @@
             this.Controls.Add(this.btnDecrypt);
             this.Controls.Add(this.btnEncryt);
             this.Controls.Add(this.btnBrowse);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPathName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -247,7 +249,7 @@
         private System.Windows.Forms.TextBox txtSClearTxt;
         private System.Windows.Forms.TextBox txtSCipheredTxt;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPathName;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.Button btnEncryt;
         private System.Windows.Forms.Button btnDecrypt;
