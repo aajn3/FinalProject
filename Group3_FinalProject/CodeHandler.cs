@@ -71,28 +71,36 @@ namespace Group3_FinalProject
         /// <param name="path">file path to the txt to be decoded</param>
         public void Decrypt(string path)
         {
+
             string currentCharSet = "";
 
             // open streams to original/new file paths
             using (StreamReader reader = new StreamReader(encodedFilePath))
             using (StreamWriter writer = new StreamWriter(decodedFilePath))
             {
+
                 while (reader.Peek() >= 0) // checks for end of file
                 {
                     
                     currentCharSet+=((char)reader.Read());
                     huffmanCode.ContainsValue(currentCharSet);
-
-                    char myKey = huffmanCode.FirstOrDefault(x => x.Value == currentCharSet).Key;
-
-                    if (myKey!=0)
+                    //System.Console.WriteLine(currentCharSet.Length);
+                    if (currentCharSet.Length > 2)
                     {
-                        writer.Write(myKey);
-                        currentCharSet="";
+                        char myKey = huffmanCode.FirstOrDefault(x => x.Value == currentCharSet).Key;
+
+                        if (myKey != 0)
+                        {
+                            writer.Write(myKey);
+                            currentCharSet = "";
+                        }
+                    
                     }
+
                 }
 
             } // close streams
+
         }
 
         /// <summary>
@@ -108,19 +116,6 @@ namespace Group3_FinalProject
             return compRatio;
         }
 
-        //int CountCharInFile(string path)
-        //{
-        //    int totalChar = 0;
-
-        //    using (StreamReader reader = new StreamReader(path))
-        //    {
-        //        while (reader.Peek() >= 0)
-        //        {
-        //            totalChar++; // add 1 to total
-        //        }
-        //    }
-        //    return totalChar;
-        //}
         #endregion
     }
 }
