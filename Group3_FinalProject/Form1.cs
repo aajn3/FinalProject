@@ -14,7 +14,7 @@ namespace Group3_FinalProject
         TextHandler textHandler;
         CodeHandler codeHandler;
         string dictKeys = " abcdefghijklmnopqrstuvwxyz";
-        private OpenFileDialog openFileDialog1;
+        private OpenFileDialog openFileDialog;
         private string filePath;
 
         public Form1()
@@ -22,13 +22,10 @@ namespace Group3_FinalProject
             InitializeComponent();
 
             textHandler = new TextHandler();
-            openFileDialog1 = new OpenFileDialog();
+            openFileDialog = new OpenFileDialog();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        private void btnExit_Click(object sender, EventArgs e){this.Close();}
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -55,10 +52,10 @@ namespace Group3_FinalProject
         {
             
             // opens the dialog and if user click ok then
-            if (openFileDialog1.ShowDialog() == DialogResult.OK) // Test result.
+            if (openFileDialog.ShowDialog() == DialogResult.OK) // Test result.
             {
                 //location of the iorn heal file 
-                filePath = openFileDialog1.FileName;
+                filePath = openFileDialog.FileName;
                 txtPathName.Text = filePath;
                 // sends the file path to textHandler 
                 textHandler.CountOccorences(filePath);

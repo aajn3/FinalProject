@@ -1,7 +1,6 @@
 ﻿using System.IO;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 
 namespace Group3_FinalProject
@@ -53,6 +52,7 @@ namespace Group3_FinalProject
                         writer.Write(huffmanCode[' ']);
                     }                    
                 }
+
             }
             // open and display the resulting .txt <-- TODO: make this happen in either the codehandler or form
         }
