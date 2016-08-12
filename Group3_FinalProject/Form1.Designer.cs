@@ -58,7 +58,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.lblCipherTxt);
-            this.groupBox1.Location = new System.Drawing.Point(622, 96);
+            this.groupBox1.Location = new System.Drawing.Point(583, 96);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(241, 109);
             this.groupBox1.TabIndex = 0;
@@ -130,14 +130,16 @@
             // 
             // txtPathName
             // 
+            this.txtPathName.BackColor = System.Drawing.SystemColors.Window;
             this.txtPathName.Location = new System.Drawing.Point(196, 11);
             this.txtPathName.Name = "txtPathName";
+            this.txtPathName.ReadOnly = true;
             this.txtPathName.Size = new System.Drawing.Size(293, 20);
             this.txtPathName.TabIndex = 2;
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(530, 9);
+            this.btnBrowse.Location = new System.Drawing.Point(495, 8);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(75, 23);
             this.btnBrowse.TabIndex = 3;
@@ -147,7 +149,7 @@
             // 
             // btnEncryt
             // 
-            this.btnEncryt.Location = new System.Drawing.Point(626, 8);
+            this.btnEncryt.Location = new System.Drawing.Point(593, 8);
             this.btnEncryt.Name = "btnEncryt";
             this.btnEncryt.Size = new System.Drawing.Size(75, 23);
             this.btnEncryt.TabIndex = 4;
@@ -157,7 +159,7 @@
             // 
             // btnDecrypt
             // 
-            this.btnDecrypt.Location = new System.Drawing.Point(707, 8);
+            this.btnDecrypt.Location = new System.Drawing.Point(674, 8);
             this.btnDecrypt.Name = "btnDecrypt";
             this.btnDecrypt.Size = new System.Drawing.Size(75, 23);
             this.btnDecrypt.TabIndex = 5;
@@ -167,7 +169,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(788, 8);
+            this.btnExit.Location = new System.Drawing.Point(755, 8);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 6;
@@ -185,7 +187,7 @@
             this.colHeadHuffman_Code});
             this.lstViewDictionaries.Location = new System.Drawing.Point(16, 38);
             this.lstViewDictionaries.Name = "lstViewDictionaries";
-            this.lstViewDictionaries.Size = new System.Drawing.Size(559, 509);
+            this.lstViewDictionaries.Size = new System.Drawing.Size(515, 509);
             this.lstViewDictionaries.TabIndex = 7;
             this.lstViewDictionaries.UseCompatibleStateImageBehavior = false;
             this.lstViewDictionaries.View = System.Windows.Forms.View.Details;
@@ -219,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 559);
+            this.ClientSize = new System.Drawing.Size(840, 559);
             this.Controls.Add(this.lstViewDictionaries);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnDecrypt);
