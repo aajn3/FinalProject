@@ -4,19 +4,21 @@ using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 
-
 namespace Group3_FinalProject
 {
+    // FORM 1 CLASS
     public partial class Form1 : Form
     {
-        //PRIVATE VARIABLES********************************************************************************
-        Dictionary<char, byte[]> ASCII;
-        TextHandler textHandler;
-        CodeHandler codeHandler;
-        string dictKeys = " abcdefghijklmnopqrstuvwxyz";
+        #region PRIVATE INSTANCE VARIABLES        
+        private Dictionary<char, byte[]> ASCII;
+        private TextHandler textHandler;
+        private CodeHandler codeHandler;
+        private string dictKeys = " abcdefghijklmnopqrstuvwxyz";
         private OpenFileDialog openFileDialog;
         private string filePath;
+        #endregion
 
+        // CONSTRUCTOR
         public Form1()
         {
             InitializeComponent();
@@ -25,13 +27,12 @@ namespace Group3_FinalProject
             openFileDialog = new OpenFileDialog();
         }
 
-        private void btnExit_Click(object sender, EventArgs e){this.Close();}
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        #region EVENT HANDLERS
+        /// <summary>
+        /// Browse Button Click Handler
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">Event Args</param>
         private void btnBrowse_Click(object sender, EventArgs e)
         {
             ASCII = new Dictionary<char, byte[]>();
@@ -70,7 +71,7 @@ namespace Group3_FinalProject
                     filePath = openFileDialog.FileName;
                     txtPathName.Text = filePath;
                     // sends the file path to textHandler 
-                    textHandler.CountOccorences(filePath);
+                    textHandler.CountOccurrences(filePath);
                     // textHandler will count and sort the file
                     textHandler.PopulateFrequency();
                     textHandler.PopulateOrderedFrequency();
@@ -88,30 +89,44 @@ namespace Group3_FinalProject
                         listViewIndex++;
                         
                     }
-
-
-
-                }
-            
+                }            
         }
 
-        private void btnEncryt_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Encrypt Button Click Handler
+        /// Encrypts the target file and opens it in Wordpad
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">Event Args</param>
+        private void btnEncrypt_Click(object sender, EventArgs e)
         {
             codeHandler = new CodeHandler(textHandler.Ordered_Frequency);
             codeHandler.Encrypt(filePath);
             Process.Start("wordpad.exe", "\"" + codeHandler.EncodedFilePath + "\"");
-            txtSCipheredTxt.Text = textHandler.TotalChar.ToString("N0");
-            txtSClearTxt.Text = codeHandler.TotBinary.ToString("N0");
-            txtCompRatio.Text = string.Format("{0:P2}", codeHandler.CalcCompressionRatio(textHandler.TotalChar, codeHandler.TotBinary)/100);
-
- 
+            txtCipheredTxt.Text = textHandler.TotalChar.ToString("N0");
+            txtClearTxt.Text = codeHandler.ToBinary.ToString("N0");
+            txtCompRatio.Text = string.Format("{0:P2}", codeHandler.CalcCompressionRatio(textHandler.TotalChar, codeHandler.ToBinary) / 100);
         }
 
+        /// <summary>
+        /// Decrypt Button Click Handler
+        /// Decrypts the encoded file and opens it in Wordpad
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">Event Args</param>
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
             codeHandler.Decrypt(filePath);
             Process.Start("wordpad.exe", "\"" + codeHandler.DecodedFilePath + "\"");
         }
 
+        /// <summary>
+        /// Exit Button Click Handler
+        /// Closes the program
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">Event Args</param>
+        private void btnExit_Click(object sender, EventArgs e){this.Close(); }
+        #endregion        
     }
 }
