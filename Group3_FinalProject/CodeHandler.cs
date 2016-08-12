@@ -8,15 +8,17 @@ namespace Group3_FinalProject
     // CODE HANDLER CLASS
     class CodeHandler
     {
-        #region INSTANCE VARIABLES
+        #region INSTANCE VARIABLES & PROPERTIES
         // PRIVATE INSTANCE VARIABLES
+        private int toBinary;
         private Dictionary<char, string> huffmanCode = new Dictionary<char, string>();
         private string[] encoding = { "100", "0010", "0011", "1111", "1110", "1100", "1011", "1010", "0110", "0101", "11011", "01111", "01001", "01000", "00011", "00010", "00001", "00000", "110101", "011101", "011100", "1101001", "110100011", "110100001", "110100000", "1101000101", "11010001000" };
-        private string encodedFilePath = Directory.GetCurrentDirectory() + @"\Huffman_ciphered.txt"; // points to a file on the current desktop
-        private string decodedFilePath = Directory.GetCurrentDirectory() + @"\Huffman_decoded.txt"; // points to a file on the current desktop
-        private int toBinary;
+        
+        // file paths
+        private string encodedFilePath = Directory.GetCurrentDirectory() + @"\Huffman_ciphered.txt";
+        private string decodedFilePath = Directory.GetCurrentDirectory() + @"\Huffman_decoded.txt";
 
-        // PUBLIC INSTANCE VARIABLES
+        // PUBLIC PROPERTIES
         public Dictionary<char, string> HuffmanCode { get { return huffmanCode; } }
         public string EncodedFilePath { get { return encodedFilePath; } }
         public string DecodedFilePath { get { return decodedFilePath; } }

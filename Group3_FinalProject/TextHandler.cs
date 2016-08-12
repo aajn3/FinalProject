@@ -8,7 +8,7 @@ namespace Group3_FinalProject
     public class TextHandler
     {
         #region INSTANCE VARIABLES & PROPERTIES
-        // INSTANCE VARIABLES
+        // PRIVATE INSTANCE VARIABLES
         private int totalChar;
 
         // PUBLIC PROPERTIES
@@ -24,15 +24,6 @@ namespace Group3_FinalProject
             Occurences = new Dictionary<char, int>();
             Frequency = new Dictionary<char, double>();
             Ordered_Frequency = new Dictionary<char, double>();
-            this.totalChar = 0;
-
-            // add keys to occurrences
-            string keys = "abcdefghijklmnopqrstuvwxyz";
-
-            Occurences.Add(' ', 0);
-            foreach (char key in keys){
-                Occurences.Add(key,0);
-            }            
         }
 
         #region PUBLIC METHODS
@@ -42,6 +33,18 @@ namespace Group3_FinalProject
         /// <param name="path">file path of text to be analyzed</param>
         public void CountOccurrences(string path)
         {
+            Occurences.Clear(); // ensures dictionary is empty
+
+            // populate occurrences dictionary
+            string keys = "abcdefghijklmnopqrstuvwxyz";
+            Occurences.Add(' ', 0);
+            foreach (char key in keys)
+            {
+                Occurences.Add(key, 0);
+            }
+
+            this.totalChar = 0;
+
             // open stream to read from file
             using (StreamReader reader = new StreamReader(path))
             {
@@ -72,6 +75,7 @@ namespace Group3_FinalProject
         /// </summary>
         public void PopulateFrequency()
         {
+            Frequency.Clear(); // ensures dictionary is empty
             foreach (char key in Occurences.Keys)
             {
                 Frequency.Add(key, ((double)Occurences[key] / (double)totalChar));
@@ -85,6 +89,7 @@ namespace Group3_FinalProject
         /// </summary>
         public void PopulateOrderedFrequency()
         {
+            Ordered_Frequency.Clear(); // ensures dictionary is empty
             foreach (var item in Frequency.OrderByDescending(key => key.Value))
             {
                 Ordered_Frequency.Add(item.Key, item.Value);

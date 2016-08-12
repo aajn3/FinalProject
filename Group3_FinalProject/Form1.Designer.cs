@@ -41,7 +41,7 @@
             this.btnEncrypt = new System.Windows.Forms.Button();
             this.btnDecrypt = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.lstViewDictionaries = new System.Windows.Forms.ListView();
+            this.listViewDictionaries = new System.Windows.Forms.ListView();
             this.colHeadLetter = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colHeadASCII = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colHeadOccurence = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -179,18 +179,18 @@
             // 
             // lstViewDictionaries
             // 
-            this.lstViewDictionaries.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewDictionaries.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colHeadLetter,
             this.colHeadASCII,
             this.colHeadOccurence,
             this.colHeadFrequency,
             this.colHeadHuffman_Code});
-            this.lstViewDictionaries.Location = new System.Drawing.Point(16, 38);
-            this.lstViewDictionaries.Name = "lstViewDictionaries";
-            this.lstViewDictionaries.Size = new System.Drawing.Size(515, 509);
-            this.lstViewDictionaries.TabIndex = 7;
-            this.lstViewDictionaries.UseCompatibleStateImageBehavior = false;
-            this.lstViewDictionaries.View = System.Windows.Forms.View.Details;
+            this.listViewDictionaries.Location = new System.Drawing.Point(16, 38);
+            this.listViewDictionaries.Name = "lstViewDictionaries";
+            this.listViewDictionaries.Size = new System.Drawing.Size(515, 509);
+            this.listViewDictionaries.TabIndex = 7;
+            this.listViewDictionaries.UseCompatibleStateImageBehavior = false;
+            this.listViewDictionaries.View = System.Windows.Forms.View.Details;
             // 
             // colHeadLetter
             // 
@@ -222,7 +222,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(840, 559);
-            this.Controls.Add(this.lstViewDictionaries);
+            this.Controls.Add(this.listViewDictionaries);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnDecrypt);
             this.Controls.Add(this.btnEncrypt);
@@ -255,7 +255,7 @@
         private System.Windows.Forms.Button btnEncrypt;
         private System.Windows.Forms.Button btnDecrypt;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.ListView lstViewDictionaries;
+        private System.Windows.Forms.ListView listViewDictionaries;
         private System.Windows.Forms.ColumnHeader colHeadLetter;
         private System.Windows.Forms.ColumnHeader colHeadASCII;
         private System.Windows.Forms.ColumnHeader colHeadOccurence;
