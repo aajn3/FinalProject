@@ -61,26 +61,25 @@ namespace Group3_FinalProject
         {
             //bool readThreeChars=true;//TEMP
 
-            StringBuilder currentCharSet=new StringBuilder();
+            string currentCharSet = "";
             // open streams to original/new file paths
             using (StreamReader reader = new StreamReader(encodedFilePath))
             using (StreamWriter writer = new StreamWriter(decodedFilePath))
             {
                 // read and convert the ciphered file
                 while(reader.Peek()>=0){
-                    currentCharSet.Append((char)reader.Read());
+                    currentCharSet+=((char)reader.Read());
+                    huffmanCode.ContainsValue(currentCharSet);
 
-                    char myKey = huffmanCode.FirstOrDefault(x => x.Value == currentCharSet.ToString()).Key;
+                    char myKey = huffmanCode.FirstOrDefault(x => x.Value == currentCharSet).Key;
 
                     if (myKey!=0)
                     {
-                        //System.Console.WriteLine(myKey);
-                        writer.Write((char)myKey);
-                        currentCharSet.Clear();
+                        writer.Write(myKey);
+                        currentCharSet="";
                     }
-
                 }
-                // display the decoded file
+
             }
         }
 
