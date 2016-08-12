@@ -100,6 +100,10 @@ namespace Group3_FinalProject
             codeHandler = new CodeHandler(textHandler.Ordered_Frequency);
             codeHandler.Encrypt(filePath);
             Process.Start("wordpad.exe", "\"" + codeHandler.EncodedFilePath + "\"");
+            txtSCipheredTxt.Text = textHandler.TotalChar.ToString("N0");
+            txtSClearTxt.Text = codeHandler.TotBinary.ToString("N0");
+            txtCompRatio.Text = string.Format("{0:P2}", codeHandler.CalcCompressionRatio(textHandler.TotalChar, codeHandler.TotBinary)/100);
+
  
         }
 

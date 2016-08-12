@@ -9,7 +9,7 @@ namespace Group3_FinalProject
 
         private int totalChar;
 
-        public int TotalChar { get; set; }
+        public int TotalChar { get { return totalChar; } set { totalChar = value;} }
 
 
         public Dictionary<char,int> Occurences { get; set; }
@@ -21,7 +21,7 @@ namespace Group3_FinalProject
             Occurences = new Dictionary<char, int>();
             Frequency = new Dictionary<char, double>();
             Ordered_Frequency = new Dictionary<char, double>();
-            totalChar = 0;
+            this.totalChar = 0;
 
             // add keys to occurences
             string keys = "abcdefghijklmnopqrstuvwxyz";
@@ -42,7 +42,7 @@ namespace Group3_FinalProject
                 {
 
                     // Count total char
-                    totalChar++;
+                    this.totalChar++;
 
                     index = char.ToLower((char)reader.Read());
 

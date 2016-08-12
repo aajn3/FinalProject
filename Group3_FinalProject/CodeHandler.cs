@@ -13,10 +13,14 @@ namespace Group3_FinalProject
         private string[] encoding = { "100", "0010", "0011", "1111", "1110", "1100", "1011", "1010", "0110", "0101", "11011", "01111", "01001", "01000", "00011", "00010", "00001", "00000", "110101", "011101", "011100", "1101001", "110100011", "110100001", "110100000", "1101000101", "11010001000" };
         private string encodedFilePath = Directory.GetCurrentDirectory() + @"\Huffman_ciphered.txt"; // points to a file on the current desktop
         private string decodedFilePath = Directory.GetCurrentDirectory() + @"\Huffman_decoded.txt"; // points to a file on the current desktop
+        private int totBinary;
 
         public Dictionary<char, string> HuffmanCode { get { return huffmanCode; } }
         public string EncodedFilePath { get { return encodedFilePath; } }
         public string DecodedFilePath { get { return decodedFilePath; } }
+        public int TotBinary { get { return totBinary; } set { totBinary = value; } }
+
+
 
 
         // CONSTRUCTOR
@@ -46,10 +50,12 @@ namespace Group3_FinalProject
                     if ("abcdefghijklmnopqrstuvwxyz".Contains(index))
                     {
                         writer.Write(huffmanCode[index]);
+                        totBinary += huffmanCode[index].Length;
                     }
-                    else
+                    else if(" ,;:".Contains(index))
                     {
                         writer.Write(huffmanCode[' ']);
+                        totBinary += huffmanCode[' '].Length;
                     }                    
                 }
 
@@ -68,6 +74,7 @@ namespace Group3_FinalProject
             {
                 // read and convert the ciphered file
                 while(reader.Peek()>=0){
+                    
                     currentCharSet+=((char)reader.Read());
                     huffmanCode.ContainsValue(currentCharSet);
 
@@ -83,25 +90,27 @@ namespace Group3_FinalProject
             }
         }
 
-        double CalcCompressionRatio(int sizeOfCipherText, int sizeOfClearText)
+        public double CalcCompressionRatio(int sizeOfCipherText, int sizeOfClearText)
         {
-            return 100 - ((sizeOfCipherText / sizeOfClearText) * 8);
+            double compRatio = 100 - ((sizeOfCipherText / (sizeOfClearText * 8.0)) * 100);
+            System.Console.WriteLine(sizeOfCipherText + " " +  sizeOfClearText + " " + compRatio );
+            return compRatio;
         }
 
 
-        int CountCharInFile(string path)
-        {
-            int totalChar = 0;
+        //int CountCharInFile(string path)
+        //{
+        //    int totalChar = 0;
 
-            using (StreamReader reader = new StreamReader(path))
-            {
-                while (reader.Peek() >= 0)
-                {
-                    totalChar++; // add 1 to total
-                }
-            }
-            return totalChar;
-        }
+        //    using (StreamReader reader = new StreamReader(path))
+        //    {
+        //        while (reader.Peek() >= 0)
+        //        {
+        //            totalChar++; // add 1 to total
+        //        }
+        //    }
+        //    return totalChar;
+        //}
 
 
     }
