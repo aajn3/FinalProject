@@ -50,7 +50,7 @@ namespace Group3_FinalProject
                     {
                         Occurences[index] = (Occurences[index]) + 1; ;
                     }
-                    else
+                    else if(" ,;:".Contains(index))
                     {
                         Occurences[' '] = (Occurences[' ']) + 1;
                     }
