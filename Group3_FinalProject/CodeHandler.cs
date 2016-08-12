@@ -22,7 +22,7 @@ namespace Group3_FinalProject
         public Dictionary<char, string> HuffmanCode { get { return huffmanCode; } }
         public string EncodedFilePath { get { return encodedFilePath; } }
         public string DecodedFilePath { get { return decodedFilePath; } }
-        public int ToBinary { get { return toBinary; } set { toBinary = value; } }
+        public int TotalBinary { get { return toBinary; } set { toBinary = value; } }
         #endregion
 
         // CONSTRUCTOR
@@ -71,36 +71,31 @@ namespace Group3_FinalProject
         /// <param name="path">file path to the txt to be decoded</param>
         public void Decrypt(string path)
         {
-
             string currentCharSet = "";
 
             // open streams to original/new file paths
             using (StreamReader reader = new StreamReader(encodedFilePath))
             using (StreamWriter writer = new StreamWriter(decodedFilePath))
             {
-
                 while (reader.Peek() >= 0) // checks for end of file
                 {
-                    
                     currentCharSet+=((char)reader.Read());
                     huffmanCode.ContainsValue(currentCharSet);
-                    //System.Console.WriteLine(currentCharSet.Length);
+
+                    /* 
+                     * Reduce the number of checks to dictonary
+                     */ 
                     if (currentCharSet.Length > 2)
                     {
-                        char myKey = huffmanCode.FirstOrDefault(x => x.Value == currentCharSet).Key;
-
+                        char myKey = huffmanCode.FirstOrDefault(x => x.Value.Equals(currentCharSet)).Key;
                         if (myKey != 0)
                         {
                             writer.Write(myKey);
                             currentCharSet = "";
                         }
-                    
                     }
-
                 }
-
             } // close streams
-
         }
 
         /// <summary>
