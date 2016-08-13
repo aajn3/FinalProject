@@ -112,8 +112,13 @@ namespace Group3_FinalProject
 
                 // populate text fields in GUI
                 txtCipheredTxt.Text = textHandler.TotalChar.ToString("N0");
+<<<<<<< HEAD
+                txtClearTxt.Text = codeHandler.ToBinary.ToString("N0");
+                txtCompRatio.Text = string.Format("{0:P2}", codeHandler.CalcCompressionRatio(codeHandler.ToBinary, textHandler.TotalChar) / 100);
+=======
                 txtClearTxt.Text = codeHandler.TotalBinary.ToString("N0");
                 txtCompRatio.Text = string.Format("{0:P2}", codeHandler.CalcCompressionRatio(textHandler.TotalChar, codeHandler.TotalBinary) / 100);
+>>>>>>> fd7fe926baee6d8be6259a5e99ebfe7980e9523c
             }
             catch (Exception error)
             {
