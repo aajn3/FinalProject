@@ -113,7 +113,7 @@ namespace Group3_FinalProject
                 // populate text fields in GUI
                 txtCipheredTxt.Text = textHandler.TotalChar.ToString("N0");
                 txtClearTxt.Text = codeHandler.ToBinary.ToString("N0");
-                txtCompRatio.Text = string.Format("{0:P2}", codeHandler.CalcCompressionRatio(textHandler.TotalChar, codeHandler.ToBinary) / 100);
+                txtCompRatio.Text = string.Format("{0:P2}", codeHandler.CalcCompressionRatio(codeHandler.ToBinary, textHandler.TotalChar) / 100);
             }
             catch (Exception error)
             {
