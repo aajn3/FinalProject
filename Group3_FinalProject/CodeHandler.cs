@@ -87,7 +87,7 @@ namespace Group3_FinalProject
                      */ 
                     if (currentCharSet.Length > 2)
                     {
-                        char myKey = huffmanCode.FirstOrDefault(x => x.Value.Equals(currentCharSet)).Key;
+                        char myKey = huffmanCode.FirstOrDefault(x => x.Value.Equals(currentCharSet.ToUpper())).Key;
                         if (myKey != 0)
                         {
                             writer.Write(myKey);
