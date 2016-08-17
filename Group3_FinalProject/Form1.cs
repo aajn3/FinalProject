@@ -27,6 +27,7 @@ namespace Group3_FinalProject
             openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Text Files (.txt)|*.txt|All Files (*.*)|*.*";
             openFileDialog.FilterIndex = 1;
+
         }
 
         #region EVENT HANDLERS
@@ -67,6 +68,7 @@ namespace Group3_FinalProject
                     listViewDictionaries.Items[listViewIndex].SubItems.Add(disVal);
                 }
                 listViewIndex++;
+
             }
 
             // open the file dialog
@@ -111,13 +113,12 @@ namespace Group3_FinalProject
                 Process.Start("wordpad.exe", "\"" + codeHandler.EncodedFilePath + "\""); // open target file in wordpad
 
                 // populate text fields in GUI
-                txtCipheredTxt.Text = textHandler.TotalChar.ToString("N0");
+                txtCipheredTxt.Text = (codeHandler.TotalBinary).ToString("N0");
 
-                txtClearTxt.Text = codeHandler.ToBinary.ToString("N0");
-                txtCompRatio.Text = string.Format("{0:P2}", codeHandler.CalcCompressionRatio(codeHandler.ToBinary, textHandler.TotalChar) / 100);
+                txtClearTxt.Text = (textHandler.TotalChar).ToString("N0");
+                
+                txtCompRatio.Text = string.Format("{0:P2}", codeHandler.CalcCompressionRatio(codeHandler.TotalBinary, textHandler.TotalChar) / 100);
 
-                txtClearTxt.Text = codeHandler.TotalBinary.ToString("N0");
-                txtCompRatio.Text = string.Format("{0:P2}", codeHandler.CalcCompressionRatio(textHandler.TotalChar, codeHandler.TotalBinary) / 100);
 
             }
             catch (Exception error)

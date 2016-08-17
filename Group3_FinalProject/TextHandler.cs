@@ -12,7 +12,7 @@ namespace Group3_FinalProject
         private int totalChar;
 
         // PUBLIC PROPERTIES
-        public int TotalChar { get { return totalChar; } set { totalChar = value;} }
+        public int TotalChar { get { return totalChar*8; } set { totalChar = value;} }
         public Dictionary<char,int> Occurences { get; set; }
         public Dictionary<char, double> Frequency { get; set; }
         public Dictionary<char, double> Ordered_Frequency { get; set; }
@@ -67,6 +67,7 @@ namespace Group3_FinalProject
                     }
                 }
             } // close stream
+           
         }
 
         /// <summary>
