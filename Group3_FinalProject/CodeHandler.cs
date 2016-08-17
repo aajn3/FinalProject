@@ -90,7 +90,7 @@ namespace Group3_FinalProject
                         char myKey = huffmanCode.FirstOrDefault(x => x.Value.Equals(currentCharSet)).Key;
                         if (myKey != 0)
                         {
-                            writer.Write(myKey);
+                            writer.Write(char.ToUpper(myKey));
                             currentCharSet = "";
                         }
                     }
@@ -106,8 +106,8 @@ namespace Group3_FinalProject
         /// <returns>outputs the theoretical compression ratio</returns>
         public double CalcCompressionRatio(int sizeOfCipherText, int sizeOfClearText)
         {
-            double compRatio = 100 - ((sizeOfCipherText / (sizeOfClearText * 8.0)) * 100);
-            //System.Console.WriteLine("Size of Cipher Text: {0}\tSize of Clear Text: {1}\tCompression Ratio: {2}", sizeOfCipherText, sizeOfClearText, compRatio);
+            double compRatio = 100 - ((sizeOfCipherText / ((double)sizeOfClearText)) * 100);
+            
             return compRatio;
         }
 
